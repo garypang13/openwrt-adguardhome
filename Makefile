@@ -60,7 +60,7 @@ TAR_NAME:=AdGuardHome_linux_$(PKG_ARCH_ADGUARDHOME)
 
 PKG_SOURCE:=$(TAR_NAME).tar.gz
 
-PKG_SOURCE_URL:=https://github.com/AdguardTeam/AdGuardHome/releases/download/v$(PKG_VERSION)/
+PKG_SOURCE_URL:=https://static.adguard.com/adguardhome/beta/
 
 UNTAR_DIR:=$(BUILD_DIR)/$(PKG_NAME)-$(PKG_VERSION)/$(PKG_NAME)-extract/$(PKG_ARCH_ADGUARDHOME)
 
