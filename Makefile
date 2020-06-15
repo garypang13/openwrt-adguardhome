@@ -15,28 +15,28 @@ PKG_RELEASE:=1
 STRIP:=true
 
 ifeq ($(ARCH),i386)
-	PKG_ARCH_BAIDUPCS-WEB:=86
+	PKG_ARCH_ADGUARDHOME:=86
 endif
 
 ifeq ($(ARCH),x86_64)
-	PKG_ARCH_BAIDUPCS-WEB:=amd64
+	PKG_ARCH_ADGUARDHOME:=amd64
 endif
 
 ifeq ($(ARCH),mipsel)
-	PKG_ARCH_BAIDUPCS-WEB:=mipsle
+	PKG_ARCH_ADGUARDHOME:=mipsle
 endif
 
 ifeq ($(ARCH),mips)
-	PKG_ARCH_BAIDUPCS-WEB:=mipsle
+	PKG_ARCH_ADGUARDHOME:=mipsle
 endif
 
 ifeq ($(ARCH),arm)
 ifeq ($(BOARD),bcm53xx)
-	PKG_ARCH_BAIDUPCS-WEB:=armv5
+	PKG_ARCH_ADGUARDHOME:=armv5
 else ifeq ($(BOARD),kirkwood)
-	PKG_ARCH_BAIDUPCS-WEB:=armv5
+	PKG_ARCH_ADGUARDHOME:=armv5
 else
-	PKG_ARCH_BAIDUPCS-WEB:=armv7
+	PKG_ARCH_ADGUARDHOME:=armv7
 endif
 endif
 
