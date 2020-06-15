@@ -29,41 +29,35 @@ endef
 STRIP:=true
 
 ifeq ($(ARCH),i386)
-	PKG_ARCH_ADGUARDHOME:=386
+	PKG_ARCH_BAIDUPCS-WEB:=86
 endif
 
 ifeq ($(ARCH),x86_64)
-	PKG_ARCH_ADGUARDHOME:=amd64
+	PKG_ARCH_BAIDUPCS-WEB:=amd64
 endif
 
 ifeq ($(ARCH),mipsel)
-	PKG_ARCH_ADGUARDHOME:=mipsle
+	PKG_ARCH_BAIDUPCS-WEB:=mipsle
 endif
 
 ifeq ($(ARCH),mips)
-	PKG_ARCH_ADGUARDHOME:=mips
+	PKG_ARCH_BAIDUPCS-WEB:=mipsle
 endif
 
 ifeq ($(ARCH),arm)
-	PKG_ARCH_ADGUARDHOME:=arm
+ifeq ($(BOARD),bcm53xx)
+	PKG_ARCH_BAIDUPCS-WEB:=armv5
+else ifeq ($(BOARD),kirkwood)
+	PKG_ARCH_BAIDUPCS-WEB:=armv5
+else
+	PKG_ARCH_BAIDUPCS-WEB:=armv7
 endif
-
-ifeq ($(ARCH),arm64)
-	PKG_ARCH_ADGUARDHOME:=arm64
-endif
-
-ifeq ($(ARCH),aarch64)
-	PKG_ARCH_ADGUARDHOME:=arm64
 endif
 
 PKG_SOURCE:=AdGuardHome_linux_$(PKG_ARCH_ADGUARDHOME).tar.gz
-
 PKG_SOURCE_URL:=https://static.adguard.com/adguardhome/beta/
-
 PKG_BUILD_DIR:=AdGuardHome_linux_$(PKG_ARCH_ADGUARDHOME)
-
 PKG_HASH:=skip
-
 define Build/Compile
 endef
 
