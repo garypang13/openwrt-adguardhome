@@ -12,20 +12,6 @@ PKG_NAME:=adguardhome
 PKG_VERSION:=latest
 PKG_RELEASE:=1
 
-include $(INCLUDE_DIR)/package.mk
-
-define Package/$(PKG_NAME)
-	SECTION:=net
-	CATEGORY:=Network
-	TITLE:=Network-wide ads & trackers blocking DNS server
-	URL:=https://github.com/AdguardTeam/AdGuardHome
-endef
-
-
-define Package/$(PKG_NAME)/description
-Network-wide ads & trackers blocking DNS server
-endef
-
 STRIP:=true
 
 ifeq ($(ARCH),i386)
@@ -58,6 +44,21 @@ PKG_SOURCE:=AdGuardHome_linux_$(PKG_ARCH_ADGUARDHOME).tar.gz
 PKG_SOURCE_URL:=https://static.adguard.com/adguardhome/beta/
 PKG_BUILD_DIR:=AdGuardHome_linux_$(PKG_ARCH_ADGUARDHOME)
 PKG_HASH:=skip
+
+include $(INCLUDE_DIR)/package.mk
+
+define Package/$(PKG_NAME)
+	SECTION:=net
+	CATEGORY:=Network
+	TITLE:=Network-wide ads & trackers blocking DNS server
+	URL:=https://github.com/AdguardTeam/AdGuardHome
+endef
+
+
+define Package/$(PKG_NAME)/description
+Network-wide ads & trackers blocking DNS server
+endef
+
 define Build/Compile
 endef
 
