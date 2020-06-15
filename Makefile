@@ -56,30 +56,20 @@ ifeq ($(ARCH),aarch64)
 	PKG_ARCH_ADGUARDHOME:=arm64
 endif
 
-TAR_NAME:=AdGuardHome_linux_$(PKG_ARCH_ADGUARDHOME)
-
-PKG_SOURCE:=$(TAR_NAME).tar.gz
+PKG_SOURCE:=AdGuardHome_linux_$(PKG_ARCH_ADGUARDHOME).tar.gz
 
 PKG_SOURCE_URL:=https://static.adguard.com/adguardhome/beta/
 
-UNTAR_DIR:=$(BUILD_DIR)/$(PKG_NAME)-$(PKG_VERSION)/$(PKG_NAME)-extract/$(PKG_ARCH_ADGUARDHOME)
+PKG_BUILD_DIR:=AdGuardHome_linux_$(PKG_ARCH_ADGUARDHOME)
 
 PKG_HASH:=skip
-
-define Build/Prepare
-	mkdir -vp $(UNTAR_DIR)
-	tar -zxvf $(DL_DIR)/$(PKG_SOURCE) -C $(UNTAR_DIR)
-endef
-
-define Build/Configure
-endef
 
 define Build/Compile
 endef
 
 define Package/$(PKG_NAME)/install
 	$(INSTALL_DIR) $(1)/usr/bin/AdGuardHome
-	$(INSTALL_BIN) $(UNTAR_DIR)/*/AdGuardHome $(1)/usr/bin/AdGuardHome/AdGuardHome
+	$(INSTALL_BIN) $(PKG_BUILD_DIR)/AdGuardHome $(1)/usr/bin/AdGuardHome/AdGuardHome
 endef
 
 $(eval $(call BuildPackage,$(PKG_NAME)))
