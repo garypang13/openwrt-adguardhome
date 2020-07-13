@@ -41,7 +41,7 @@ endif
 endif
 
 PKG_SOURCE:=AdGuardHome_linux_$(PKG_ARCH).tar.gz
-PKG_SOURCE_URL:=https://static.adguard.com/adguardhome/beta/
+PKG_SOURCE_URL:=https://static.adguard.com/adguardhome/release/
 PKG_BUILD_DIR:=$(BUILD_DIR)/AdGuardHome_linux_$(PKG_ARCH)
 PKG_HASH:=skip
 
