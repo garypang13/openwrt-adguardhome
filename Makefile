@@ -8,7 +8,7 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_NAME:=adguardhome
+PKG_NAME:=AdGuardHome
 PKG_VERSION:=latest
 PKG_RELEASE:=1
 
